@@ -1,0 +1,35 @@
+# Fichiers sensibles
+*.env
+*.ini
+*.log
+*.sql
+*.zip
+
+# Dossiers à ignorer
+node_modules/
+vendor/
+temp/
+cache/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration locaux
+config.local.php
+*.local
+
+# Fichiers de base de données
+*.sqlite
+*.db
+
+# IDE/Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Windows
+/ntuser.dat
+/ntuser.dat.log
+/ntuser.ini

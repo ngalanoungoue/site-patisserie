@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="IMAGES&VIDEOS-SITES/favicon.png">
+    <title>Les Biscuits de Maman - Accueil</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36d988521c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Réduit l'espace pour éviter l'encombrement */
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        .icon-link {
+            text-align: center;
+            text-decoration: none;
+            color: inherit; /* Utilise la couleur du texte parent */
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            width: 120px; /* Taille réduite */
+        }
+        .icon-link:hover {
+            transform: translateY(-8px);
+            color: #0d6efd;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+        .icon-circle .fas, .icon-circle .fa-solid {
+            font-size: 2.5rem; /* Taille d'icône plus petite */
+            color: #fff;
+        }
+        /* Couleurs pour chaque icône */
+        .icon-menu .icon-circle { background-color: #ffc107; } /* Jaune */
+        .icon-panier .icon-circle { background-color: #fd7e14; } /* Orange */
+        .icon-histoire .icon-circle { background-color: #20c997; } /* Vert */
+        .icon-contact .icon-circle { background-color: #6c757d; } /* Gris */
+        .icon-livraison .icon-circle { background-color: #0dcaf0; } /* Bleu Cyan */
+
+        @media (max-width: 768px) {
+            .icon-container {
+                gap: 15px;
+            }
+            .icon-link {
+                width: 100px; /* Encore plus petit sur mobile */
+            }
+            .icon-circle {
+                width: 70px;
+                height: 70px;
+            }
+            .icon-circle .fas, .icon-circle .fa-solid {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="BISCUIRT.png" alt="Logo" class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home me-1"></i>Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.php"><i class="fas fa-cookie-bite me-1"></i>Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoire.html"><i class="fas fa-book-open me-1"></i>Notre Histoire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="panier.html"><i class="fas fa-shopping-basket me-1"></i>Panier</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="livraison.html"><i class="fas fa-truck-moving me-1"></i>Conditions de livraison</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid text-center mt-5 mb-5">
+            <h2 class="mb-4">Découvrez nos services</h2>
+            <div class="d-flex justify-content-center icon-container">
+                <a href="menu.php" class="icon-link icon-menu">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-cookie-bite fa-bounce"></i>
+                    </div>
+                    <span class="d-block mt-2 fw-bold">Menu</span>
+                </a>
+
+                <a href="panier.html" class="icon-link icon-panier">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-shopping-basket fa-bounce"></i>
+                    </div>
+                    <span class="d-block mt-2 fw-bold">Panier</span>
+                </a>
+
+                <a href="histoire.html" class="icon-link icon-histoire">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-book-open fa-bounce"></i>
+                    </div>
+                    <span class="d-block mt-2 fw-bold">Histoire</span>
+                </a>
+
+                <a href="contact.html" class="icon-link icon-contact">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-envelope-open-text fa-bounce"></i>
+                    </div>
+                    <span class="d-block mt-2 fw-bold">Contact</span>
+                </a>
+
+                <a href="livraison.html" class="icon-link icon-livraison">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-truck-moving fa-bounce"></i>
+                    </div>
+                    <span class="d-block mt-2 fw-bold">Livraison</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Les Biscuits de Maman 🍪</h1>
+                <p class="hero-lead">Des douceurs faites maison, avec amour et des ingrédients d'exception.</p>
+                <a href="menu.php" class="btn btn-commander btn-lg mt-4 animate__animated animate__pulse animate__infinite"><i class="fas fa-utensils me-2"></i> Découvrez nos délices</a>
+            </div>
+        </section>
+
+        <section class="container tradition-section text-center my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="IMAGES&VIDEOS-SITES/illustration-de-famille-noire-dessinee-a-la-main.jpg" class="img-fluid rounded shadow-lg" alt="Cuisine artisanale">
+                </div>
+                <div class="col-md-6 order-md-1 text-md-start mt-4 mt-md-0">
+                    <h2>La Tradition au Cœur de Chaque Biscuit ❤️</h2>
+                    <p class="lead">Depuis des années, Maman confectionne des biscuits qui ravissent les papilles. Chaque recette est un héritage familial, transmise de génération en génération.</p>
+                    <p>Notre secret ? Des ingrédients simples, sélectionnés avec soin, et une passion inébranlable pour la pâtisserie. C'est cette touche unique qui rend nos biscuits si spéciaux.</p>
+                    <a href="histoire.html" class="btn btn-primary mt-3"><i class="fas fa-book-reader me-2"></i>Découvrir notre histoire</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center my-5 p-5 bg-light rounded shadow-sm">
+            <h2 class="mb-4">Prêt à succomber à la tentation ? 😋</h2>
+            <p class="lead">Explorez notre menu pour trouver le lot de biscuits parfait pour vous ou pour offrir à vos proches.</p>
+            <a href="menu.php" class="btn btn-commander btn-lg mt-3"><i class="fas fa-cookie-bite me-2"></i> Voir le menu complet</a>
+        </section>
+    </main>
+    
+ <div class="alert alert-info text-center" role="alert">
+            <p>🎉 Nous livrons à Yaoundé, Cameroun. Pour passer commande ou poser une question, contactez-nous ! 🎉</p>
+        </div>
+
+   <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
+                <!-- Les SVGs des réseaux sociaux ont été simplifiés par des icônes FA pour la cohérence Bootstrap/FA -->
+                <a href="mailto:mireillestella8@gmail.com" aria-label="E-mail" class="text-white hover-text-warning"><i class="fas fa-envelope fa-lg"></i></a>
+                <a href="https://www.instagram.com/mire_illestella?igsh=b2didWdjNTB4dWs0" target="_blank" aria-label="Instagram" class="text-white hover-text-warning"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://youtube.com/shorts/09HSs9nAgo8?si=DhL2J6MuABP0iH1g" target="_blank" aria-label="YouTube" class="text-white hover-text-warning"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@stellamireille6 " target="_blank" aria-label="TikTok" class="text-white hover-text-warning"><i class="fab fa-tiktok fa-lg"></i></a>
+                <a href="https://www.facebook.com/share/17KCWTpVCj/" target="_blank" aria-label="Facebook" class="text-white hover-text-warning"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/stella-noungoue " target="_blank" aria-label="LinkedIn" class="text-white hover-text-warning"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https:// www.stellachill.wordpress.com " target="_blank" aria-label="WordPress" class="text-white hover-text-warning"><i class="fab fa-wordpress fa-lg"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Les biscuits de maman. Tous droits réservés.
+                <a href="politique-confidentialite.html" class="text-white text-decoration-none ms-3">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

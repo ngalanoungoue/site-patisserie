@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier - Les Biscuits de Maman</title>
+    <link rel="icon" type="image/png" href="IMAGES&VIDEOS-SITES/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36d988521c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .card {
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            padding: 1rem;
+        }
+        .total-row {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        #empty-cart-message {
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+        .btn-checkout {
+            background-color: #ff6600;
+            border-color: #ff6600;
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem;
+        }
+        .btn-checkout:hover:not(:disabled) {
+            background-color: #e65c00;
+            border-color: #e65c00;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="IMAGES&VIDEOS-SITES/eid-panier-cote-gauche-en-fond-blanc.jpg" alt="Logo" class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.php"><i class="fas fa-cookie-bite me-1"></i>Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoire.html"><i class="fas fa-book-open me-1"></i>Notre Histoire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="panier.html"><i class="fas fa-shopping-basket me-1"></i>Panier</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="livraison.html"><i class="fas fa-truck-moving me-1"></i>Conditions de livraison</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container my-5">
+        <h1 class="text-center mb-4"><i class="fas fa-shopping-basket me-2"></i> Votre Panier</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-list-alt me-2"></i> Articles de votre commande
+                    </div>
+                    <div class="list-group list-group-flush" id="cart-items"></div>
+                    <div id="empty-cart-message" style="display: none;">
+                        Votre panier est vide. Ajoutez des délices !
+                    </div>
+                    <div class="card-footer text-end">
+                        <button onclick="clearCart()" class="btn btn-sm btn-outline-danger" style="display: none;">
+                            <i class="fas fa-trash-alt me-1"></i> Vider le Panier
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-truck me-2"></i> Informations de Livraison
+                    </div>
+                    <div class="card-body">
+                        <form id="shipping-form" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="full_name" class="form-label"><i class="fas fa-user me-1"></i> Nom Complet</label>
+                                <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Nom et Prénoms" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label"><i class="fas fa-envelope me-1"></i> Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="mon.email@domaine.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label"><i class="fas fa-phone me-1"></i> Téléphone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Ex: 690000000" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="city" class="form-label"><i class="fas fa-city me-1"></i> Ville / Quartier</label>
+                                <input type="text" id="city" name="city" class="form-control" placeholder="Yaoundé, Mvog-Ada..." required>
+                            </div>
+                            <div class="col-12">
+                                <label for="address" class="form-label"><i class="fas fa-location-arrow me-1"></i> Adresse Détaillée</label>
+                                <textarea id="address" name="address" rows="3" class="form-control" placeholder="Numéro de rue, repère, instructions spéciales..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="comments" class="form-label"><i class="fas fa-comment-dots me-1"></i> Commentaires (facultatif)</label>
+                                <textarea id="comments" name="comments" rows="3" class="form-control" placeholder="Vos commentaires ici..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-header">
+                        <i class="fas fa-receipt me-1"></i> Récépissé
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-7 text-start">Sous-total articles:</div>
+                            <div class="col-5 text-end" id="subtotal">0 FCFA</div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-7 text-start">Frais de livraison:</div>
+                            <div class="col-5 text-end" id="shipping-fees-amount">1000 FCFA</div>
+                        </div>
+                        <hr>
+                        <div class="row total-row">
+                            <div class="col-6 text-start">TOTAL À PAYER:</div>
+                            <div class="col-6 text-end" id="cart-total">0 FCFA</div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-checkout w-100" onclick="checkout()">Valider et commander</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
+                <a href="mailto:mireillestella8@gmail.com" aria-label="E-mail" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
+                <a href="https://www.instagram.com/mire_illestella" target="_blank" aria-label="Instagram" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://youtube.com/shorts/09HSs9nAgo8" target="_blank" aria-label="YouTube" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@stellamireille6" target="_blank" aria-label="TikTok" class="text-white"><i class="fab fa-tiktok fa-lg"></i></a>
+                <a href="https://www.facebook.com/share/17KCWTpVCj/" target="_blank" aria-label="Facebook" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/stella-noungoue" target="_blank" aria-label="LinkedIn" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https://stellachill.wordpress.com" target="_blank" aria-label="WordPress" class="text-white"><i class="fab fa-wordpress fa-lg"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Les biscuits de maman. Tous droits réservés.
+                <a href="politique-confidentialite.html" class="text-white text-decoration-none ms-3">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="panier.js"></script>
+</body>
+</html>

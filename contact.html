@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Biscuits de Maman - Contact</title>
+    <link rel="icon" type="image/png" href="IMAGES&VIDEOS-SITES/favicon.png"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/36d988521c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="IMAGES&VIDEOS-SITES/2473375.jpg" alt="Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home me-1"></i>Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.php"><i class="fas fa-cookie-bite me-1"></i>Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoire.html"><i class="fas fa-book-open me-1"></i>Notre Histoire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="panier.html"><i class="fas fa-shopping-basket me-1"></i>Panier</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i>Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="livraison.html"><i class="fas fa-truck-moving me-1"></i>Conditions de livraison</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+</header>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Contactez-nous</h1>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card p-4 shadow-sm rounded">
+                    <form action="envoyer_message.php" method="POST">
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom Complet</label>
+                            <input type="text" class="form-control" id="nom" name="nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sujet" class="form-label">Sujet</label>
+                            <input type="text" class="form-control" id="sujet" name="sujet">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Votre message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Envoyer le message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+     <main class="container py-5">
+        <section id="coordonnees" class="text-center my-4">
+            <h2 class="mb-4">Nos coordonnées</h2>
+            <p class="lead">Adresse : 123 Rue de la Pharmacie Bleue, Ville du Yaoundé</p>
+            <p class="lead">Téléphone : +237 56 65 22 38</p>
+            <p class="lead">E-mail : <a href="mailto:mireillestella8@gmail.com">mireillestella8@gmail.com</a></p>
+        </section>
+
+        <section id="ou-nous-trouver" class="my-5">
+            <h2 class="text-center mb-4">Où nous trouver</h2>
+            <div class="card p-3 shadow-sm rounded">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d127383.07271933915!2d11.517951999999982!3d3.869900800000021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2scm!4v1757653841564!5m2!1sfr!2scm" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+   <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
+                <!-- Les SVGs des réseaux sociaux ont été simplifiés par des icônes FA pour la cohérence Bootstrap/FA -->
+                <a href="mailto:mireillestella8@gmail.com" aria-label="E-mail" class="text-white hover-text-warning"><i class="fas fa-envelope fa-lg"></i></a>
+                <a href="https://www.instagram.com/mire_illestella?igsh=b2didWdjNTB4dWs0" target="_blank" aria-label="Instagram" class="text-white hover-text-warning"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://youtube.com/shorts/09HSs9nAgo8?si=DhL2J6MuABP0iH1g" target="_blank" aria-label="YouTube" class="text-white hover-text-warning"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://www.tiktok.com/@stellamireille6 " target="_blank" aria-label="TikTok" class="text-white hover-text-warning"><i class="fab fa-tiktok fa-lg"></i></a>
+                <a href="https://www.facebook.com/share/17KCWTpVCj/" target="_blank" aria-label="Facebook" class="text-white hover-text-warning"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/stella-noungoue " target="_blank" aria-label="LinkedIn" class="text-white hover-text-warning"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="https:// www.stellachill.wordpress.com " target="_blank" aria-label="WordPress" class="text-white hover-text-warning"><i class="fab fa-wordpress fa-lg"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Les biscuits de maman. Tous droits réservés.
+                <a href="politique-confidentialite.html" class="text-white text-decoration-none ms-3">Politique de Confidentialité</a>
+            </p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function() {
+        // Change l'icône du bouton "Envoyer" pour indiquer qu'il est en cours d'envoi
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Envoi en cours...';
+        submitButton.disabled = true; // Désactive le bouton pour éviter les envois multiples
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Fonction générique pour l'effet machine à écrire sur un champ
+        function setupTypeWriterEffect(elementId, examples) {
+            const element = document.getElementById(elementId);
+            if (!element) return; // S'assurer que l'élément existe
+
+            let exampleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentExample = examples[exampleIndex];
+                if (isDeleting) {
+                    element.setAttribute('placeholder', currentExample.substring(0, charIndex - 1));
+                    charIndex--;
+                } else {
+                    element.setAttribute('placeholder', currentExample.substring(0, charIndex + 1));
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentExample.length) {
+                    setTimeout(() => isDeleting = true, 2000); // Attendre 2 secondes
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    exampleIndex = (exampleIndex + 1) % examples.length;
+                    setTimeout(typeWriter, 500); // Délai avant le prochain mot
+                    return;
+                }
+
+                const typingSpeed = isDeleting ? 50 : 100;
+                setTimeout(typeWriter, typingSpeed);
+            }
+
+            // Démarrer l'effet
+            typeWriter();
+        }
+
+        // --- Configuration pour le champ Sujet ---
+        const sujetExamples = [
+            "Ex: Commande spéciale, Demande de partenariat...",
+            "Demande de renseignements",
+            "Problème avec une commande",
+            "Suggestion de recette",
+            "Demande de partenariat",
+            "Candidature spontanée",
+            "Retours sur expérience"
+        ];
+        setupTypeWriterEffect('sujet', sujetExamples);
+
+        // --- Configuration pour le champ Votre message ---
+        const messageExamples = [
+            "Ex: J'aimerais commander des biscuits pour un événement...",
+            "J'aimerais commander une quantité spécifique de biscuits pour un événement.",
+            "Je rencontre un problème avec ma dernière commande.",
+            "Je souhaiterais obtenir plus d'informations sur vos ingrédients.",
+            "J'ai une idée de recette de biscuit à vous soumettre.",
+            "Mon adresse de livraison est...",
+            "Puis-je modifier ma commande ?"
+        ];
+        setupTypeWriterEffect('message', messageExamples);
+
+    });
+</script>
+</body>
+</html>
+
+
+
